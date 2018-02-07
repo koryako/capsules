@@ -26,7 +26,7 @@ from models.layers import variables
 
 
 class CapsuleModel(model.Model):
-  """A multi GPU Model with capsule layers.
+  """A multi GPU Model with capsule layers. 胶囊层的多GPU模型
 
   The inference graph includes a 256-Channel ReLU convolution layer,
   a 32x8-Squash convolution layer and a 10x8 Squash with routing Capsule

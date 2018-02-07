@@ -294,11 +294,14 @@ def run_experiment(loader,
 
 def train(hparams, summary_dir, num_gpus, model_type, max_steps, save_step,
           data_dir, num_targets, dataset, validate):
-  """Trains a model with batch sizes of 128 to FLAGS.max_steps steps.
-
+  """
+  训练批量尺寸128 最大步数.
+   
+   初始化模型 且设置保存模型的路径或者重新开始训练的时候不用从头开始
   It will initialize the model with either previously saved model in the
   summary directory or start from scratch if FLAGS.restart is set or the
   directory is empty.
+   训练数据分配在几块GPUS上，每1500次迭代 保存模型
   The training is distributed on num_gpus GPUs. It writes a summary at every
   step and saves the model every 1500 iterations.
 
